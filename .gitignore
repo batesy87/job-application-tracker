@@ -1,0 +1,11 @@
+# Private working notes — deliberately not published.
+TDD_Practice_Plan.md
+
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
