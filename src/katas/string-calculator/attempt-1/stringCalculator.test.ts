@@ -28,4 +28,9 @@ describe("String calculator", () => {
     const result = add(input);
     expect(result).toBe(6);
   })
+  it("returns the sum of numbers with a custom delimeter", () => {
+    const input = "//;\n1;2";
+    const result = add(input);
+    expect(result).toBe(3);
+  })
 });
