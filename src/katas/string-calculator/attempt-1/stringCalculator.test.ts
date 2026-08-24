@@ -4,13 +4,13 @@ import { add } from "./stringCalculator";
 
 describe("String calculator", () => {
   it("returns zero for an empty string", () => {
-    // Arrange
     const input = "";
-
-    // Act
     const result = add(input);
-
-    // Assert
     expect(result).toBe(0);
   });
+  it("returns the correct number for a single number", () => {
+    const input = "1";
+    const result = add("1");
+    expect(result).toBe(1)
+  })
 });
