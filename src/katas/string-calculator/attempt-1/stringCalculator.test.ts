@@ -13,4 +13,9 @@ describe("String calculator", () => {
     const result = add("1");
     expect(result).toBe(1)
   })
+  it("returns the sum of a comma separated list of numbers", () => {
+    const input = "1,2";
+    const result = add("1,2");
+    expect(result).toBe(3);
+  })
 });
