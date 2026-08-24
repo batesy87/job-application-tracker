@@ -18,4 +18,9 @@ describe("String calculator", () => {
     const result = add("1,2");
     expect(result).toBe(3);
   })
+  it("returns the sum of any amount of comma separated list of numbers", () => {
+    const input = "1,2,3,4";
+    const result = add("1,2,3,4");
+    expect(result).toBe(10);
+  })
 });
