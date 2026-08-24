@@ -1,3 +1,3 @@
 export function add(numbers: string): number {
-  return numbers ? parseInt(numbers) : 0;
+  return Number(numbers);
 }
