@@ -10,5 +10,7 @@ export function add(numbers: string): number {
     throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
   }
 
-  return values.reduce((acc, cur) => acc + cur, 0);
+  const filteredValues = values.filter((num) => num <= 1000);
+
+  return filteredValues.reduce((acc, cur) => acc + cur, 0);
 }

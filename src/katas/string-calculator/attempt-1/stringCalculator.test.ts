@@ -41,4 +41,18 @@ describe("String calculator", () => {
     const input = "1,-2,-3";
     expect(() => add(input)).toThrow("Negatives not allowed: -2, -3");
   });
+  it("ignores numbers greater than 1000", () => {
+    const input = "2,1001";
+    const result = add(input);
+    expect(result).toBe(2);
+  });
+  it("still allows numbers equal to 1000", () => {
+    const input = "1000,2";
+    const result = add(input);
+    expect(result).toBe(1002);
+  });
+  it("throws an error on a negative number more than 1000", () => {
+    const input = "-1001,1";
+    expect(() => add(input)).toThrow("Negatives not allowed: -1001");
+  });
 });
