@@ -55,4 +55,14 @@ describe("String calculator", () => {
     const input = "-1001,1";
     expect(() => add(input)).toThrow("Negatives not allowed: -1001");
   });
+  it("allows a custom delimeter of any length", () => {
+    const input = "//[***]\n1***2***3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
+  it("allows any single character as a custom delimeter", () => {
+    const input = "//%\n1%2%3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
 });
