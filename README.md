@@ -40,13 +40,22 @@ The domain logic is kept pure: functions that take values and return values, wit
 Work in progress, built over a series of evenings. Commits are dated and continuous rather than backfilled.
 
 - [x] Toolchain and first passing test
-- [ ] Day 1 — Red/green/refactor rhythm (String Calculator kata, `src/katas/`)
-- [ ] Day 2 — Test lists and deliberate refactoring
+- [x] Day 1 — Red/green/refactor rhythm (String Calculator kata, `src/katas/`)
+- [x] Day 2 — Test lists and deliberate refactoring — kata complete, all nine requirements
 - [ ] Day 3 — Domain logic, test-first
 - [ ] Day 4 — Data layer against real PostgreSQL
 - [ ] Day 5 — React components, tested behaviourally
 - [ ] Day 6 — One end-to-end journey in Playwright
 - [ ] Day 7 — AI-assisted implementation with the test suite as the guardrail
+
+The kata's test list is in `src/katas/string-calculator/Notes.md`, including the cases
+deliberately deferred rather than chased.
+
+A handful of commits carry a `Co-Authored-By: Claude` trailer. Those are the ones where
+the implementation was AI-generated against tests written first; everything without the
+trailer was written by hand. On the last requirement that review caught a defect the
+suite could not — two delimiters where one is a prefix of the other passed only because
+an empty string coerces to zero. The sharpened test and the fix are both in the history.
 
 ## Running it
 
