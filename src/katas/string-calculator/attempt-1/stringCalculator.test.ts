@@ -33,4 +33,12 @@ describe("String calculator", () => {
     const result = add(input);
     expect(result).toBe(3);
   })
+  it("throws an error when a negative number is included", () => {
+    const input = "1,-2,3";
+    expect(() => add(input)).toThrow("Negatives not allowed: -2");
+  })
+  it("throws an error when multiple negative numbers are included", () => {
+    const input = "1,-2,-3";
+    expect(() => add(input)).toThrow("Negatives not allowed: -2, -3");
+  });
 });
