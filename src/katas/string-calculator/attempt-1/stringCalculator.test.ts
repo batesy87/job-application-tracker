@@ -65,4 +65,29 @@ describe("String calculator", () => {
     const result = add(input);
     expect(result).toBe(6);
   });
+  it("allows multiple custom delimeters", () => {
+    const input = "//[*][%]\n1*2%3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
+  it("allows multiple custom delimeters of any length", () => {
+    const input = "//[***][%%]\n1***2%%3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
+  it("allows multiple delimiters of any length in different orders", () => {
+    const input = "//[*][**]\n1*2**3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
+  it("still treats newlines as separators when a custom delimiter is declared", () => {
+    const input = "//[***]\n1***2\n3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
+  it("mixes multiple delimiters and newlines in one body", () => {
+    const input = "//[*][%]\n1*2%3\n4";
+    const result = add(input);
+    expect(result).toBe(10);
+  });
 });
