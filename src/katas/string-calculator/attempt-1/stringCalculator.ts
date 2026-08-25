@@ -15,8 +15,14 @@ function parseDelimiters(header: string): string[] {
   return [...header.matchAll(/\[([^\]]*)\]/g)].flatMap((match) => match[1] ?? []);
 }
 
+/**
+ * Alternation is first-match-wins, so a delimiter that is a prefix of another
+ * would shadow it. Longest first. Copied before sorting: sort mutates, and the
+ * default list is shared.
+ */
 function splitterFor(delimiters: string[]): RegExp {
-  return new RegExp([...delimiters.map(escapeRegExp), "\\n"].join("|"));
+  const longestFirst = [...delimiters].sort((a, b) => b.length - a.length);
+  return new RegExp([...longestFirst.map(escapeRegExp), "\\n"].join("|"));
 }
 
 export function add(input: string): number {

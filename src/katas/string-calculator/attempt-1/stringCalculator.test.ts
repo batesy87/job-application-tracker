@@ -75,8 +75,8 @@ describe("String calculator", () => {
     const result = add(input);
     expect(result).toBe(6);
   });
-  it("allows multiple delimiters of any length in different orders", () => {
-    const input = "//[*][**]\n1*2**3";
+  it("prefers the longer delimiter when one is a prefix of another", () => {
+    const input = "//[*][*%]\n1*%2*3";
     const result = add(input);
     expect(result).toBe(6);
   });
